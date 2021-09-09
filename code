@@ -1,0 +1,53 @@
+# age_calculator
+#Age calculation , pass present year/present age and get result in how many years you will be 100
+while True:
+    try:
+        present_year = int(input(print("Enter the present year:")))
+        User_age = int(input(print("Enter your age->")))
+        break
+    except ValueError:
+        print("You can only pass integer")
+
+
+def agecalculator(User_age):
+    if User_age >= 1 and User_age <= 100:
+        print("Age identified:")
+        left_year = 100 - User_age
+        hunderd_year = present_year + left_year
+        print(f'You will be 100 on your {hunderd_year}')
+
+    elif User_age <= 185 and User_age < present_year:
+        print("Year of birth identified:")
+        print(f"You are already 100 as your age is: {User_age + 100}")
+
+    elif User_age > 125 and User_age < 200:
+        print("You are the oldest person alive")
+
+    elif User_age > present_year and User_age < 185:
+        print("Age or birth year not identified- Not yet born")
+
+    else:
+        print("Please type correct date")
+
+
+agecalculator(User_age)
+
+
+def present_age():
+    while True:
+        try:
+            print("Are you interested to know your present age. Press 1 for 'Yes' and for 'No' press any key")
+            choice = int(input())
+            if User_age >= 1 and User_age <= 125 and choice == 1:
+                print(f"Your age is already submitted {User_age}")
+            elif User_age >= 185 and User_age < present_year:
+                if choice == 1:
+                    print(f"your present age is {present_year - User_age}")
+                else:
+                    print("Thankyou !!")
+            break
+        except ValueError:
+            print("Integer only")
+
+
+present_age()
